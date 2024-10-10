@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "CloudFormation template to create an EC2 instance with parameters"
+Parameters:
+  InstanceTypeParam:
+    Type: String
+    Default: "t2.micro"
+    Description: "The EC2 instance type"
+    AllowedValues:
+      - "t2.micro"
+      - "t2.small"
+      - "t2.medium"
+    ConstraintDescription: "Must be a valid EC2 instance type."
+
+  KeyPairName:
+    Type: "AWS::EC2::KeyPair::hugokeycloudformation"
+    Description: "The name of an existing EC2 KeyPair"
+
+  Resources: 
+   MyEC2Instance: "CFHugo"
+   Type: "AWS::EC2::Instance"
+   Properties:
+      InstanceType: "t2.micro"
+      KeyName: "hugokeycloudformation"
+      ImageId: "ami-08f63db601b82ff5f"  # Ubuntu 20.04 LTS AMI for ap-southeast-1
+      SecurityGroups:
+        - "default"

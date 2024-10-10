@@ -1,2 +1,3 @@
 "This is my hugo ERP app" 
 "Add New Feature" 
+"Add New FOOTER"
